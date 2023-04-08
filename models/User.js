@@ -7,7 +7,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
       Unique: true,
-      max_length: 60,
+      maxLength: 60,
     },
     email: {
       type: String,
@@ -43,6 +43,6 @@ userSchema
     return this.friends.length;
   });
 
-const User = model('user', userSchema, User);
+const User = model('user', userSchema, 'user');
 
 module.exports = User;
