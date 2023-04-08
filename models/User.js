@@ -7,13 +7,13 @@ const userSchema = new Schema(
       type: String,
       required: true,
       Unique: true,
-      max_length: 50,
+      max_length: 60,
     },
     email: {
       type: String,
       required: true,
       Unique: true,
-      max_length: 50,
+      match: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
     },
     thoughts: [
       {
