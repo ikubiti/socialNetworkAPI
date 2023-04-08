@@ -1,0 +1,20 @@
+{
+  "name": "socialnetworkapi",
+  "version": "1.0.0",
+  "description": "Building an API for a social Network App using NoSQL database MongoDb, Mongoose ODM, and Express.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "keywords": [],
+  "author": "Isoyor Kubiti",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^6.9.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
