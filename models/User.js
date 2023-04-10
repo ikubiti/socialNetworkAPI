@@ -1,18 +1,18 @@
 const { Schema, model } = require('mongoose');
 
-// Schema to create Student model
+// Schema to create User model
 const userSchema = new Schema(
   {
     username: {
       type: String,
       required: true,
-      Unique: true,
+      unique: true,
       maxLength: 60,
     },
     email: {
       type: String,
       required: true,
-      Unique: true,
+      unique: true,
       match: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
     },
     thoughts: [
@@ -30,6 +30,7 @@ const userSchema = new Schema(
   },
   {
     toJSON: {
+      virtuals: true,
       getters: true,
     },
   }

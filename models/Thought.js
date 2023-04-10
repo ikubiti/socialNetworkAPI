@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 const reactionSchema = require('./Reaction');
 
-// Schema to create Student model
+// Schema to create Thought model
 const thoughtSchema = new Schema(
   {
     thoughtText: {
@@ -23,13 +23,14 @@ const thoughtSchema = new Schema(
   },
   {
     toJSON: {
+      virtuals: true,
       getters: true,
     },
   }
 );
 
 // The virtual property `reactionCount` gets the count of reaction per any thought;
-userSchema
+reactionSchema
   .virtual('reactionCount')
   // Getter
   .get(function () {
