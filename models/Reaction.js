@@ -1,4 +1,5 @@
 const { Schema, Types } = require('mongoose');
+const dayjs = require('dayjs');
 
 // Reaction Schema definition
 const reactionSchema = new Schema(
@@ -20,6 +21,7 @@ const reactionSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
+      get: formateDate,
     },
   },
   {
@@ -29,5 +31,10 @@ const reactionSchema = new Schema(
     id: false,
   }
 );
+
+// Getter function to format date on query
+function formateDate(currentDate) {
+  return dayjs(currentDate).format('MMM DD, YYYY [at] hh:mm a');
+}
 
 module.exports = reactionSchema;
